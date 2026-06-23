@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./hooks/useAuth";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -15,9 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             path="/dashboard"
             element={
               <ProtectedRoute>
-                <div style={{ padding: "40px", fontSize: "24px" }}>
-                  ✅ Dashboard coming next!
-                </div>
+                <Dashboard />
               </ProtectedRoute>
             }
           />
