@@ -57,7 +57,6 @@ export default function Login() {
         position: "relative",
         overflow: "hidden",
       }}>
-        {/* Decorative circles */}
         <Box sx={{ position: "absolute", width: 400, height: 400, borderRadius: "50%", background: "rgba(255,107,74,0.08)", top: -100, left: -100 }} />
         <Box sx={{ position: "absolute", width: 300, height: 300, borderRadius: "50%", background: "rgba(255,107,74,0.06)", bottom: -50, right: -50 }} />
 
@@ -69,7 +68,12 @@ export default function Login() {
         </Typography>
 
         <Box sx={{ mt: 6, display: "flex", flexDirection: "column", gap: 2, width: "100%", maxWidth: 320 }}>
-          {["Room availability at a glance", "Seamless booking management", "Guest records synced to GHL", "Revenue tracking & reports"].map((item) => (
+          {[
+            "Room availability at a glance",
+            "Seamless booking management",
+            "Guest records synced to GHL",
+            "Revenue tracking & reports",
+          ].map((item) => (
             <Box key={item} sx={{ display: "flex", alignItems: "center", gap: 2 }}>
               <Box sx={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#ff6b4a", flexShrink: 0 }} />
               <Typography sx={{ color: "rgba(255,255,255,0.8)", fontSize: 15 }}>{item}</Typography>
@@ -78,7 +82,7 @@ export default function Login() {
         </Box>
       </Box>
 
-      {/* Right panel — login form */}
+      {/* Right panel */}
       <Box sx={{
         width: { xs: "100%", md: 480 },
         display: "flex",
@@ -111,12 +115,14 @@ export default function Login() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 fullWidth
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <EmailIcon sx={{ color: "#6b7280", fontSize: 20 }} />
-                    </InputAdornment>
-                  ),
+                slotProps={{
+                  input: {
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <EmailIcon sx={{ color: "#6b7280", fontSize: 20 }} />
+                      </InputAdornment>
+                    ),
+                  },
                 }}
                 sx={{ "& .MuiOutlinedInput-root": { borderRadius: "10px" } }}
               />
@@ -128,19 +134,21 @@ export default function Login() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 fullWidth
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <LockIcon sx={{ color: "#6b7280", fontSize: 20 }} />
-                    </InputAdornment>
-                  ),
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
-                        {showPassword ? <VisibilityOff /> : <Visibility />}
-                      </IconButton>
-                    </InputAdornment>
-                  ),
+                slotProps={{
+                  input: {
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <LockIcon sx={{ color: "#6b7280", fontSize: 20 }} />
+                      </InputAdornment>
+                    ),
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  },
                 }}
                 sx={{ "& .MuiOutlinedInput-root": { borderRadius: "10px" } }}
               />

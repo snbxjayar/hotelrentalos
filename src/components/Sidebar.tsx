@@ -116,13 +116,15 @@ export default function Sidebar() {
                   </ListItemIcon>
                   {!collapsed && (
                     <ListItemText
-                      primary={item.label}
-                      primaryTypographyProps={{
-                        fontSize: 14,
-                        fontWeight: isActive ? 600 : 400,
-                        color: isActive ? "#ffffff" : "rgba(255,255,255,0.7)",
-                      }}
-                    />
+  primary={item.label}
+  slotProps={{
+    primary: {
+      fontSize: 14,
+      fontWeight: isActive ? 600 : 400,
+      color: isActive ? "#ffffff" : "rgba(255,255,255,0.7)",
+    }
+  }}
+/>
                   )}
                 </ListItemButton>
               </Tooltip>
