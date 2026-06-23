@@ -3,15 +3,15 @@ import {
   useContext,
   useEffect,
   useState,
-  ReactNode,
 } from "react";
+import type { ReactNode } from "react";
 import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "../services/firebase";
-import { AuthContextType, User } from "../types/auth";
+import type { AuthContextType, User } from "../types/auth";
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
