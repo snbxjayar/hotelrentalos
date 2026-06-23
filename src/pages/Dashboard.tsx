@@ -64,8 +64,8 @@ export default function Dashboard() {
 
     const available = rooms.filter((r) => r.status === "available").length;
     const occupied = rooms.filter((r) => r.status === "occupied").length;
-    const _maintenance = rooms.filter((r) => r.status === "maintenance").length;
-    const _reserved = rooms.filter((r) => r.status === "reserved").length;
+    //const _maintenance = rooms.filter((r) => r.status === "maintenance").length;
+    //const _reserved = rooms.filter((r) => r.status === "reserved").length;
     const totalRevenue = recentBookings.reduce((sum, b) => sum + b.totalAmount, 0);
 
     const stats = [
